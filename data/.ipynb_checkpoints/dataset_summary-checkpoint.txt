@@ -1,0 +1,24 @@
+
+OLIST DATASET SUMMARY
+==================================================
+Total Transactions: 110,194
+Date Range: 2016-10-03 to 2018-08-29
+Unique Customers: 93,357
+Total Revenue: $19,776,160.44
+Average Order Value: $179.47
+Average Review Score: 4.07/5.0
+
+Top 5 Categories:
+category
+bed_bath_table           10953
+health_beauty             9462
+sports_leisure            8431
+furniture_decor           8160
+computers_accessories     7644
+
+Payment Methods:
+payment_type
+credit_card    83351
+boleto         22362
+voucher         2829
+debit_card      1652
