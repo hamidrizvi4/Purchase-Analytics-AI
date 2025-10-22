@@ -1,8 +1,8 @@
 [theme]
-primaryColor = "#1E88E5"
-backgroundColor = "#FFFFFF"
-secondaryBackgroundColor = "#F0F2F6"
-textColor = "#262730"
+primaryColor = "#667eea"
+backgroundColor = "#0f0f0f"
+secondaryBackgroundColor = "#1a1a1a"
+textColor = "#e0e0e0"
 font = "sans serif"
 
 [server]
@@ -13,47 +13,3 @@ enableXsrfProtection = true
 
 [browser]
 gatherUsageStats = false
-
-
-### 13.2 Update .gitignore
-
-**Edit `.gitignore`:**
-
-# Python
-venv/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.so
-
-# Environment
-.env
-.venv
-
-# Data
-data/*.csv
-data/*.xlsx
-outputs/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS
-.DS_Store
-Thumbs.db
-
-# Streamlit
-.streamlit/secrets.toml
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# Misc
-*.log
