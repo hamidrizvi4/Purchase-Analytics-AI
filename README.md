@@ -45,7 +45,7 @@
 
 ### Option 1: Try Online (Easiest)
 
-Visit the [live demo](https://YOUR-APP-URL.streamlit.app) - no installation needed!
+Visit the [live demo](https://analyticsai.streamlit.app/) - no installation needed!
 
 ### Option 2: Run Locally
 ```bash
