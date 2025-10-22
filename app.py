@@ -429,7 +429,7 @@ with st.spinner("🔄 Loading data..."):
             df = load_data(uploaded_file)
             data_source_text = "Custom Upload"
         else:
-            df = load_data()
+            df = load_data(None)
             data_source_text = "Olist Dataset"
         time.sleep(0.5)
     except Exception as e:
