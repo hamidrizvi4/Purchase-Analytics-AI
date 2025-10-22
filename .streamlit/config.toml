@@ -13,12 +13,12 @@ enableXsrfProtection = true
 
 [browser]
 gatherUsageStats = false
-```
+
 
 ### 13.2 Update .gitignore
 
 **Edit `.gitignore`:**
-```
+
 # Python
 venv/
 __pycache__/
