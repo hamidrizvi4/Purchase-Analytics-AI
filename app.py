@@ -107,6 +107,7 @@ st.markdown("""
         box-shadow: 0 8px 24px rgba(0,0,0,0.4);
         border: 1px solid #3a3a3a;
         transition: all 0.3s ease;
+        height: 200px; 
     }
     
     .metric-card:hover {
@@ -116,7 +117,7 @@ st.markdown("""
     }
     
     .metric-value {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
         font-weight: 700;
         background: linear-gradient(135deg, #667eea 0%, #a78bfa 100%);
         -webkit-background-clip: text;
@@ -126,7 +127,7 @@ st.markdown("""
     }
     
     .metric-label {
-        font-size: 0.95rem;
+        font-size: 1.2rem;
         color: #b0b0b0;
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -410,7 +411,13 @@ with st.sidebar:
 @st.cache_data(ttl=3600)
 def load_data(file=None):
     if file is not None:
-        df = pd.read_csv(file)
+        try:
+            # Try standard UTF-8 first
+            df = pd.read_csv(file, encoding='utf-8')
+        except UnicodeDecodeError:
+            # If UTF-8 fails, reset the file pointer and try latin1
+            file.seek(0)
+            df = pd.read_csv(file, encoding='latin1')
     else:
         df = pd.read_csv('data/purchases.csv')
     df['transaction_date'] = pd.to_datetime(df['transaction_date'])
