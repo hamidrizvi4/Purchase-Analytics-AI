@@ -117,7 +117,7 @@ st.markdown("""
     }
     
     .metric-value {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 700;
         background: linear-gradient(135deg, #667eea 0%, #a78bfa 100%);
         -webkit-background-clip: text;
