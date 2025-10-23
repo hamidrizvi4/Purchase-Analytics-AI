@@ -16,7 +16,7 @@ from src.ai_insights import (
 import json
 
 print("="*60)
-print("🤖 AI INSIGHTS GENERATION TEST")
+print("AI INSIGHTS GENERATION TEST")
 print("="*60)
 
 # Load data
@@ -25,7 +25,7 @@ df = pd.read_csv('data/purchases.csv')
 df['transaction_date'] = pd.to_datetime(df['transaction_date'])
 print(f"✅ Loaded {len(df):,} transactions")
 
-# Perform analysis
+# analysis
 print("\n📊 Running analysis...")
 metrics = calculate_key_metrics(df)
 rfm = perform_rfm_analysis(df)
@@ -35,7 +35,6 @@ trends = analyze_trends(df)
 
 print("✅ Analysis complete")
 
-# Generate AI insights
 print("\n🤖 Generating AI insights (this takes 15-30 seconds)...")
 print("⏳ Calling Gemini API...")
 
@@ -87,9 +86,3 @@ print("="*60)
 
 exec_summary = generate_executive_summary(metrics, insights)
 print(exec_summary)
-
-print("\n" + "="*60)
-print("✅ TEST COMPLETE!")
-print("="*60)
-print("\n💡 If you see insights above, your AI integration works!")
-print("Next step: Build the Streamlit dashboard")
