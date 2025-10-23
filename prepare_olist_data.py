@@ -13,28 +13,28 @@ category_translation = pd.read_csv('data/product_category_name_translation.csv')
 
 print("🔗 Merging tables...")
 
-# Step 1: Merge order items with orders
+
 df = order_items.merge(orders, on='order_id', how='left')
 
-# Step 2: Add customer data
+
 df = df.merge(customers, on='customer_id', how='left')
 
-# Step 3: Add product data
+
 df = df.merge(products, on='product_id', how='left')
 
-# Step 4: Translate category names to English
+# Translate category names to English
 df = df.merge(category_translation, on='product_category_name', how='left')
 
-# Step 5: Add payment data (aggregate by order)
+
 payment_agg = payments.groupby('order_id').agg({
-    'payment_type': 'first',  # Most common payment method
+    'payment_type': 'first',  
     'payment_installments': 'first',
-    'payment_value': 'sum'  # Total payment
+    'payment_value': 'sum'  
 }).reset_index()
 
 df = df.merge(payment_agg, on='order_id', how='left')
 
-# Step 6: Add review scores
+# Add review scores
 review_agg = reviews.groupby('order_id').agg({
     'review_score': 'mean',
     'review_comment_message': 'count'
@@ -72,12 +72,12 @@ df_clean = df[[
 })
 
 # Data cleaning
-df_clean = df_clean[df_clean['order_status'] == 'delivered']  # Only completed orders
+df_clean = df_clean[df_clean['order_status'] == 'delivered'] 
 df_clean = df_clean.dropna(subset=['customer_id', 'total_amount', 'transaction_date'])
 df_clean['transaction_date'] = pd.to_datetime(df_clean['transaction_date'])
 
 # Add derived columns
-df_clean['quantity'] = 1  # Assume 1 item per line (Olist structure)
+df_clean['quantity'] = 1  
 df_clean['year'] = df_clean['transaction_date'].dt.year
 df_clean['month'] = df_clean['transaction_date'].dt.month
 df_clean['day_of_week'] = df_clean['transaction_date'].dt.day_name()
