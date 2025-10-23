@@ -1,7 +1,3 @@
-"""
-AI-Powered Purchase Analytics Platform
-"""
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -12,7 +8,7 @@ from dotenv import load_dotenv
 import time
 import json
 
-# Import custom modules
+
 from src.analysis import (
     calculate_key_metrics, 
     perform_rfm_analysis, 
@@ -39,7 +35,7 @@ from src.visualizations import (
     create_review_score_chart
 )
 
-# Load environment
+
 load_dotenv()
 
 # ============================================
@@ -54,7 +50,7 @@ st.set_page_config(
 )
 
 # ============================================
-# CUSTOM CSS - DARK THEME
+# CSS
 # ============================================
 
 st.markdown("""
@@ -357,7 +353,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ============================================
-# SIDEBAR CONFIGURATION
+# SIDEBAR CONFIG
 # ============================================
 
 with st.sidebar:
