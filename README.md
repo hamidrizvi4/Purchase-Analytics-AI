@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev)
 
-[🚀 Live Demo](https://analyticsai.streamlit.app/) | [📊 Sample Report](#)
+[🚀 Live Demo](https://analyticsai.streamlit.app/) 
 
 ---
 
